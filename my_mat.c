@@ -203,5 +203,5 @@ void printResult()
             printf(" %s", stringsItems[i]);
         }
     }
-    printf("\n");
+    //printf("\n");
 }
