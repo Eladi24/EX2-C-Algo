@@ -188,13 +188,13 @@ int selectItems(int weights[], int values[], int selected_bool[]) {
 void printResult() {
     init();
     printf("Maximum profit: %d\n" ,selectItems(weights, values, selected_bool));
-    printf("Selected items: " );
+    printf("Selected items:");
     for (int i = 0; i < MAX_ITEMS; i++)
     {
         if (selected_bool[i] == 1)
         {
-            printf("%s ", stringsItems[i]);
+            printf(" %s", stringsItems[i]);
         }
     }
-    //printf("\n");
+    printf("\n");
 }
