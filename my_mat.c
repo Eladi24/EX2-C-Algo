@@ -4,17 +4,21 @@
 
 // Define maximum number of vertices in the graph
 #define MAX_VERTICES 10
-
+// Define maximum number of items in knapsack
 #define MAX_ITEMS 5
-
+// Define maximum weight of knapsack
 #define MAX_WEIGHT 20
-
+// Define maximum number of chars in item name
 #define Max_Char 21
+// An array to store the items
 char stringsItems[MAX_ITEMS][Max_Char];
+// An array to store items values
 int values[MAX_ITEMS];
+// An array to store items weights
 int weights[MAX_ITEMS];
+// An array to store selected item in knapsack
 int selected_bool[MAX_ITEMS];
-
+// An adjMatrix reprisenting the graph
 int adjMatrix[MAX_VERTICES][MAX_VERTICES];
 
 void createAdjMatrix() {
@@ -24,7 +28,7 @@ void createAdjMatrix() {
 
     for (int j = 0; j < MAX_VERTICES; j++)
     {
-        printf("please enter a value: " );
+        //printf("please enter a value: " );
         scanf("%d", &adjMatrix[i][j]);
     }
     
@@ -77,9 +81,9 @@ void floydWarshall() {
 void isPath() {
     
     int i, j;
-    printf("please enter i: " );
+    //printf("please enter i: " );
     scanf("%d", &i);
-    printf("Please enter j: ");
+    //printf("Please enter j: ");
     scanf("%d", &j);
     if (adjMatrix[i][j] <= 0 && i != j)
     {
@@ -92,9 +96,9 @@ void isPath() {
 
 void shortestPath() {
     int i, j;
-    printf("please enter i: " );
+    //printf("please enter i: " );
     scanf("%d", &i);
-    printf("please enter j: " );
+    //printf("please enter j: " );
     scanf("%d", &j);
 
     if (adjMatrix[i][j] > 0)
@@ -109,15 +113,6 @@ void shortestPath() {
     
 }
 
-// Define a structure to hold information about an item
-struct Item {
-    char name[21];  // Assuming the maximum length of the name is 20 characters
-    int weight;
-    int value;
-    
-};
-
-struct Item items[MAX_ITEMS];
 
 void init() {
     
@@ -125,13 +120,13 @@ void init() {
     
     for (int i = 0; i < MAX_ITEMS; i++)
     {
-        printf("Please enter items name %d :", i +1);
+        //printf("Please enter items name %d :", i +1);
         scanf("%20s", stringsItems[i]);
         
-        printf("Please enter value %d :", i +1);
+        //printf("Please enter value %d :", i +1);
         scanf("%d", &values[i]);
 
-        printf("Please enter weight %d :", i + 1);
+        //printf("Please enter weight %d :", i + 1);
         scanf("%d", &weights[i]);
     }
     
@@ -193,14 +188,13 @@ int selectItems(int weights[], int values[], int selected_bool[]) {
 void printResult() {
     init();
     printf("Maximum profit: %d\n" ,selectItems(weights, values, selected_bool));
-    printf("Items that give the maximum profit:\n" );
+    printf("Selected items: " );
     for (int i = 0; i < MAX_ITEMS; i++)
     {
         if (selected_bool[i] == 1)
         {
-            printf("%s\n", stringsItems[i]);
+            printf("%s ", stringsItems[i]);
         }
-        //printf("\n");
-        
     }
+    printf("\n");
 }

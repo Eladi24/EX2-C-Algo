@@ -6,7 +6,7 @@
 int main() {
     char choise;
     do {
-        printf("Please enter your choise: ");
+        //printf("Please enter your choise: ");
         scanf("%c", &choise);
 
         switch (choise)
@@ -30,7 +30,7 @@ int main() {
             
         }
     } 
-    while (choise != 'D'); 
+    while (choise != 'D' && choise != EOF); 
     
     return 0;
     
