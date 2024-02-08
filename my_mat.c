@@ -85,7 +85,7 @@ void isPath() {
     scanf("%d", &i);
     //printf("Please enter j: ");
     scanf("%d", &j);
-    if (adjMatrix[i][j] <= 0 && i != j)
+    if (adjMatrix[i][j] <= 0)
     {
     
         printf("False\n");
