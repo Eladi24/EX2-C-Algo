@@ -85,9 +85,9 @@ void isPath()
 
     int i, j;
     // printf("please enter i: " );
-    scanf("%d", &i);
+    scanf("%d %d", &i, &j);
     // printf("Please enter j: ");
-    scanf("%d", &j);
+    //scanf("%d", &j);
     if (adjMatrix[i][j] <= 0)
     {
 
@@ -103,9 +103,9 @@ void shortestPath()
 {
     int i, j;
     // printf("please enter i: " );
-    scanf("%d", &i);
+    scanf("%d %d", &i, &j);
     // printf("please enter j: " );
-    scanf("%d", &j);
+    //scanf("%d", &j);
 
     if (adjMatrix[i][j] > 0)
     {
@@ -114,7 +114,7 @@ void shortestPath()
 
     else
     {
-        printf("%d\n", -1);
+        printf("-1\n");
     }
 }
 
