@@ -124,13 +124,13 @@ void init()
     for (int i = 0; i < MAX_ITEMS; i++)
     {
         // printf("Please enter items name %d :", i +1);
-        scanf("%20s", stringsItems[i]);
+        scanf("%20s %d %d", stringsItems[i], &values[i], &weights[i]);
 
         // printf("Please enter value %d :", i +1);
-        scanf("%d", &values[i]);
+        //scanf("%d", &values[i]);
 
         // printf("Please enter weight %d :", i + 1);
-        scanf("%d", &weights[i]);
+        //scanf("%d", &weights[i]);
     }
 }
 
