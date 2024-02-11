@@ -28,7 +28,6 @@ void createAdjMatrix()
 
         for (int j = 0; j < MAX_VERTICES; j++)
         {
-            // printf("please enter a value: " );
             scanf("%d", &adjMatrix[i][j]);
         }
     }
@@ -42,16 +41,7 @@ void floydWarshall()
     int i, j, k;
     /* Add all vertices one by one to
       the set of intermediate vertices.
-      ---> Before start of an iteration, we
-      have shortest distances between all
-      pairs of vertices such that the shortest
-      distances consider only the
-      vertices in set {0, 1, 2, .. k-1} as
-      intermediate vertices.
-      ----> After the end of an iteration,
-      vertex no. k is added to the set of
-      intermediate vertices and the set
-      becomes {0, 1, 2, .. k} */
+       */
     for (k = 0; k < MAX_VERTICES; k++)
     {
         // Pick all vertices as source one by one
@@ -84,10 +74,9 @@ void isPath()
 {
 
     int i, j;
-    // printf("please enter i: " );
+    
     scanf("%d %d", &i, &j);
-    // printf("Please enter j: ");
-    //scanf("%d", &j);
+    
     if (adjMatrix[i][j] <= 0)
     {
 
@@ -102,11 +91,9 @@ void isPath()
 void shortestPath()
 {
     int i, j;
-    // printf("please enter i: " );
+    
     scanf("%d %d", &i, &j);
-    // printf("please enter j: " );
-    //scanf("%d", &j);
-
+    
     if (adjMatrix[i][j] > 0)
     {
         printf("%d\n", adjMatrix[i][j]);
@@ -123,14 +110,9 @@ void init()
 
     for (int i = 0; i < MAX_ITEMS; i++)
     {
-        // printf("Please enter items name %d :", i +1);
+        
         scanf("%20s %d %d", stringsItems[i], &values[i], &weights[i]);
 
-        // printf("Please enter value %d :", i +1);
-        //scanf("%d", &values[i]);
-
-        // printf("Please enter weight %d :", i + 1);
-        //scanf("%d", &weights[i]);
     }
 }
 
@@ -141,9 +123,8 @@ int max(int a, int b)
 
 int selectItems(int weights[], int values[], int selected_bool[])
 {
-    // int n = sizeof(values) / sizeof(values[0]);
     int n = MAX_ITEMS;
-    // int W = sizeof(weights) / sizeof(weights[0]);
+    
     int W = MAX_WEIGHT;
 
     int K[n + 1][W + 1];
@@ -203,5 +184,4 @@ void printResult()
             printf(" %s", stringsItems[i]);
         }
     }
-    //printf("\n");
 }

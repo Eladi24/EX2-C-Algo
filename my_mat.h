@@ -26,22 +26,4 @@ int max(int a, int b);
 void printResult();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
