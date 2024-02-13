@@ -6,7 +6,7 @@ int main()
     char choise;
     do
     {
-        // printf("Please enter your choise: ");
+        
         scanf("%c", &choise);
 
         switch (choise)
